@@ -2,16 +2,13 @@ package com.juan.spring.diapp.services;
 
 import com.juan.spring.diapp.models.Product;
 import com.juan.spring.diapp.repositories.ProductRepository;
-import com.juan.spring.diapp.repositories.ProductRepositoryImpl;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Component
 @Service
 public class ProductServiceImpl implements ProductService {
 
