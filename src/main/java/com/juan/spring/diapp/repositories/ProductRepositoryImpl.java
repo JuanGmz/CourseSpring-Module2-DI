@@ -2,11 +2,15 @@ package com.juan.spring.diapp.repositories;
 
 import com.juan.spring.diapp.models.Product;
 
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Repository;
 
 import java.util.Arrays;
 import java.util.List;
 
+
+// @Prinary Identify the container by default, just in case if we have two or more implementations with the implements
+@Primary
 @Repository
 public class ProductRepositoryImpl implements ProductRepository {
     private List<Product> data;
