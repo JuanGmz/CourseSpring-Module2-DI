@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 import com.juan.spring.diapp.models.Product;
 
-@Repository
+@Repository("ProductFoo")
 public class ProductRepositoryFoo implements ProductRepository {
 
     @Override

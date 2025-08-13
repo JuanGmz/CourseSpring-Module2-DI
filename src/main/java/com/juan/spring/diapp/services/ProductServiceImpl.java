@@ -4,6 +4,7 @@ import com.juan.spring.diapp.models.Product;
 import com.juan.spring.diapp.repositories.ProductRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,7 +14,13 @@ import java.util.stream.Collectors;
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
+    // @Qualifier("ProductFoo")
     private ProductRepository productRepository;
+
+    // This code is just if not use @Autowired and @Qualifier is a select to choose between implementations
+    // public ProductServiceImpl(@Qualifier("ProductFoo") ProductRepository productRepository) {
+    //     this.productRepository = productRepository;
+    // }
 
     @Override
     public List<Product> findAll() {
