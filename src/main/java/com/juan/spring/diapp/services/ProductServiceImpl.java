@@ -1,19 +1,26 @@
 package com.juan.spring.diapp.services;
 
 import com.juan.spring.diapp.models.Product;
+import com.juan.spring.diapp.repositories.ProductRepository;
 import com.juan.spring.diapp.repositories.ProductRepositoryImpl;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Component
 @Service
 public class ProductServiceImpl implements ProductService {
-    private ProductRepositoryImpl productRepositoryImpl = new ProductRepositoryImpl();
+
+    @Autowired
+    private ProductRepository productRepository;
 
     @Override
     public List<Product> findAll() {
-        return productRepositoryImpl.findAll().stream().map(p -> {
+        return productRepository.findAll().stream().map(p -> {
             Double newPrice = p.getPrice() * 1.25;
 
             // Principle of immutability
@@ -31,6 +38,6 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public Product findById(Long id) {
-        return productRepositoryImpl.findById(id);
+        return productRepository.findById(id);
     }
 }

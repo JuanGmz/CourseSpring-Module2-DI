@@ -5,10 +5,10 @@ import lombok.Data;
 
 // Lombok generate a constructor without args by default
 
-// Generate a constructor with all args using lombok
-@AllArgsConstructor
 // Generate getters and setters with lombok
 @Data
+// Generate a constructor with all args using lombok
+@AllArgsConstructor
 public class Product implements Cloneable {
     private Long id;
     private String name;
